@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rise Up Youth Conference 2027 | Sample | TeamAfot Events</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/base.css">
+<style>
+  :root { --navy: #14213D; --navy-2: #1E2F54; --orange: #FF7A3D; --yellow: #FFD166; --sky: #EAF1FF; --ink: #14213D; --mute: #5C6782; --accent: #FF7A3D; }
+  body { background: #fff; color: var(--ink); }
+  .hero { position: relative; overflow: hidden; color: #fff; background: radial-gradient(40rem 30rem at 80% 30%, #2C4478, var(--navy) 70%); padding: 6.5rem 1.5rem 5rem; }
+  .hero__inner { max-width: 1080px; margin: 0 auto; position: relative; z-index: 1; }
+  .tag { display: inline-block; background: var(--orange); color: #fff; font-size: .78rem; letter-spacing: .16em; padding: .4rem .9rem; border-radius: 999px; }
+  .title { font-weight: 500; font-size: clamp(4rem, 15vw, 10rem); line-height: .88; letter-spacing: -.04em; margin: 1.2rem 0 .6rem; }
+  .title span { display: inline-block; transform: translateY(110%); opacity: 0; animation: rise .8s var(--ease) forwards; }
+  .title span:nth-child(2) { animation-delay: .12s; } .title span:nth-child(3) { animation-delay: .24s; } .title span:nth-child(4) { animation-delay: .36s; }
+  .title .o { color: var(--yellow); }
+  @keyframes rise { to { transform: none; opacity: 1; } }
+  .theme { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 3vw, 1.7rem); color: #C9D5F0; }
+  .meta { display: flex; flex-wrap: wrap; gap: .8rem 2rem; margin-top: 1.6rem; font-size: 1rem; }
+  .meta b { color: var(--yellow); font-weight: 500; }
+  .hero .countdown { margin: 2rem 0 0; max-width: 24rem; }
+  .hero .countdown div { background: rgba(255,255,255,.08); border-radius: 14px; padding: .6rem 0; }
+  .hero .countdown b { font-family: var(--sans); font-weight: 500; }
+  .hero__actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 2rem; }
+  .btn--orange { background: var(--orange); color: #fff; border-color: var(--orange); }
+  .btn--ghost { color: #fff; border-color: rgba(255,255,255,.4); }
+  .rings { position: absolute; right: -120px; top: 50%; width: 520px; height: 520px; margin-top: -260px; border-radius: 50%; border: 2px solid rgba(255,209,102,.25); }
+  .rings::before, .rings::after { content: ""; position: absolute; inset: 60px; border-radius: 50%; border: 2px solid rgba(255,122,61,.3); animation: pulse 4s ease-in-out infinite; }
+  .rings::after { inset: 130px; border-color: rgba(255,255,255,.18); animation-delay: -2s; }
+  @keyframes pulse { 50% { transform: scale(1.06); } }
+
+  .s { padding: clamp(4.5rem, 9vw, 6.5rem) 1.5rem; }
+  .s__inner { max-width: 1080px; margin: 0 auto; }
+  .s h2 { font-weight: 500; font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.05; }
+  .s .lead { color: var(--mute); max-width: 34rem; margin-top: .6rem; }
+  .s--sky { background: var(--sky); }
+  .speakers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 2.4rem; }
+  .sp { text-align: center; }
+  .sp__av { aspect-ratio: 1; border-radius: 28px; display: grid; place-items: center; font-weight: 500; font-size: 2.4rem; color: #fff; background: var(--c); position: relative; overflow: hidden; }
+  .sp__av::after { content: ""; position: absolute; inset: auto -20% -40% -20%; height: 70%; border-radius: 50%; background: rgba(255,255,255,.12); }
+  .sp h3 { font-weight: 500; font-size: 1.1rem; margin-top: .9rem; }
+  .sp p { color: var(--mute); font-size: .9rem; }
+
+  .tabs { display: flex; gap: .5rem; margin: 2rem 0 1.4rem; flex-wrap: wrap; }
+  .tab { border: 0; background: #fff; color: var(--mute); padding: .8rem 1.3rem; border-radius: 14px; cursor: pointer; font: 500 .95rem/1.2 var(--sans); box-shadow: inset 0 0 0 1px rgba(20,33,61,.12); text-align: left; }
+  .tab small { display: block; font-size: .72rem; letter-spacing: .12em; font-weight: 400; }
+  .tab[aria-selected="true"] { background: var(--navy); color: #fff; box-shadow: none; }
+  .panel { display: grid; gap: .7rem; animation: fadein .4s var(--ease); }
+  .panel[hidden] { display: none; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(6px); } }
+  .slot { display: grid; grid-template-columns: 6rem 1fr auto; gap: 1rem; align-items: center; background: #fff; border-radius: 18px; padding: 1.1rem 1.3rem; }
+  .slot time { font-weight: 500; color: var(--orange); }
+  .slot h3 { font-weight: 500; font-size: 1.05rem; }
+  .slot p { color: var(--mute); font-size: .9rem; }
+  .slot span { font-size: .74rem; letter-spacing: .1em; padding: .3rem .7rem; border-radius: 999px; background: var(--sky); color: var(--navy-2); white-space: nowrap; }
+
+  .reg { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+  .reg ul { list-style: none; padding: 0; margin: 1.4rem 0 0; display: grid; gap: .6rem; }
+  .reg li::before { content: "✓  "; color: var(--orange); font-weight: 500; }
+  .card { background: var(--sky); border-radius: 24px; padding: 1.8rem; }
+  .card form { display: grid; gap: .5rem; }
+  .card label { font-weight: 500; font-size: .9rem; }
+  .card input, .card select { font: 400 1rem var(--sans); color: var(--ink); background: #fff; border: 1px solid #D5DEF0; border-radius: 12px; padding: .8rem 1rem; width: 100%; }
+  .card .err { min-height: 1.2em; color: #C0392B; font-size: .88rem; }
+  .card .ok { font-size: 1rem; color: var(--navy); background: #fff; border-radius: 14px; padding: 1rem; margin-top: .6rem; }
+  .card .ok[hidden] { display: none; }
+  .card .ok b { color: var(--orange); }
+  .venue { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; }
+  .map { aspect-ratio: 16 / 10; border-radius: 24px; background:
+      linear-gradient(90deg, transparent 48%, #fff 48% 52%, transparent 52%), linear-gradient(0deg, transparent 58%, #fff 58% 62%, transparent 62%),
+      linear-gradient(35deg, transparent 30%, rgba(255,255,255,.8) 30% 33%, transparent 33%), #DCE6F7; position: relative; }
+  .map::after { content: "📍"; position: absolute; left: 50%; top: 42%; font-size: 2.4rem; transform: translate(-50%, -50%); animation: drop 1.6s ease-in-out infinite; }
+  @keyframes drop { 50% { transform: translate(-50%, -62%); } }
+  .made { background: var(--navy); color: #C9D5F0; }
+  .made a:not(.btn) { color: var(--yellow); }
+  .made__prog { color: var(--yellow); }
+  @media (max-width: 860px) { .speakers { grid-template-columns: 1fr 1fr; } .reg, .venue { grid-template-columns: 1fr; } .slot { grid-template-columns: 4.6rem 1fr; } .slot span { grid-column: 2; justify-self: start; } .rings { opacity: .4; } }
+</style>
+</head>
+<body>
+<div class="bar"><a href="../../#samples">← TeamAfot Events</a><span class="bar__label">Sample conference website</span><a class="bar__cta" href="../../#contact">Plan my event</a></div>
+
+<main>
+  <header class="hero">
+    <div class="rings" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <span class="tag">YOUTH CONFERENCE 2027</span>
+      <h1 class="title" aria-label="Rise up"><span>RI</span><span>SE</span> <span class="o">UP</span><span class="o">.</span></h1>
+      <p class="theme">"Arise, shine, for your light has come." Isaiah 60:1</p>
+      <div class="meta"><span><b>When</b> 5 – 7 August 2027</span><span><b>Where</b> Grace Convention Centre, Accra</span><span><b>Who</b> Ages 15 to 35</span></div>
+      <div class="countdown">
+        <div><b data-cd="d">0</b><small>days</small></div><div><b data-cd="h">00</b><small>hours</small></div>
+        <div><b data-cd="m">00</b><small>mins</small></div><div><b data-cd="s">00</b><small>secs</small></div>
+      </div>
+      <div class="hero__actions"><a class="btn btn--orange" href="#register">Register free</a><a class="btn btn--ghost" href="../../programme/?e=conference">View the programme</a></div>
+    </div>
+  </header>
+
+  <section class="s">
+    <div class="s__inner">
+      <h2>Speakers</h2>
+      <p class="lead">Voices that will challenge, inspire and equip you.</p>
+      <div class="speakers">
+        <div class="sp"><div class="sp__av" style="--c:linear-gradient(135deg,#FF7A3D,#FFB36B)">KA</div><h3>Rev. Kofi Amoako</h3><p>Lead pastor, keynote speaker</p></div>
+        <div class="sp"><div class="sp__av" style="--c:linear-gradient(135deg,#14213D,#3A5BA0)">EN</div><h3>Dr. Esi Nyarko</h3><p>Physician and mentor</p></div>
+        <div class="sp"><div class="sp__av" style="--c:linear-gradient(135deg,#2BB39A,#7BE0C9)">YB</div><h3>Yaw Boakye</h3><p>Tech founder</p></div>
+        <div class="sp"><div class="sp__av" style="--c:linear-gradient(135deg,#9B6BFF,#C8B1FF)">AD</div><h3>Abena Darko</h3><p>Worship leader</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s s--sky">
+    <div class="s__inner">
+      <h2>Agenda</h2>
+      <p class="lead">Three days of worship, teaching, workshops and fun.</p>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-controls="d1" aria-selected="true"><small>THURSDAY 5 AUG</small>Day one: Arise</button>
+        <button class="tab" role="tab" aria-controls="d2" aria-selected="false"><small>FRIDAY 6 AUG</small>Day two: Shine</button>
+        <button class="tab" role="tab" aria-controls="d3" aria-selected="false"><small>SATURDAY 7 AUG</small>Day three: Go</button>
+      </div>
+      <div class="panel" id="d1" role="tabpanel">
+        <div class="slot"><time>9:00</time><div><h3>Registration and welcome</h3><p>Pick up your conference pack</p></div><span>LOBBY</span></div>
+        <div class="slot"><time>10:00</time><div><h3>Opening worship</h3><p>Abena Darko and the worship team</p></div><span>MAIN HALL</span></div>
+        <div class="slot"><time>11:00</time><div><h3>Keynote: Arise</h3><p>Rev. Kofi Amoako</p></div><span>MAIN HALL</span></div>
+        <div class="slot"><time>2:00</time><div><h3>Workshops</h3><p>Career, faith and relationships</p></div><span>ROOMS A–C</span></div>
+      </div>
+      <div class="panel" id="d2" role="tabpanel" hidden>
+        <div class="slot"><time>9:30</time><div><h3>Morning devotion</h3><p>Prayer and worship</p></div><span>MAIN HALL</span></div>
+        <div class="slot"><time>10:30</time><div><h3>Panel: Shining at work</h3><p>Dr. Esi Nyarko and Yaw Boakye</p></div><span>MAIN HALL</span></div>
+        <div class="slot"><time>2:00</time><div><h3>Mentorship circles</h3><p>Small groups with mentors</p></div><span>GARDEN</span></div>
+        <div class="slot"><time>7:00</time><div><h3>Youth night</h3><p>Music, games and fellowship</p></div><span>MAIN HALL</span></div>
+      </div>
+      <div class="panel" id="d3" role="tabpanel" hidden>
+        <div class="slot"><time>9:30</time><div><h3>Commissioning service</h3><p>Rev. Kofi Amoako</p></div><span>MAIN HALL</span></div>
+        <div class="slot"><time>12:00</time><div><h3>Community outreach</h3><p>Serving the neighbourhood together</p></div><span>OFFSITE</span></div>
+        <div class="slot"><time>4:00</time><div><h3>Closing celebration</h3><p>Testimonies and thanksgiving</p></div><span>MAIN HALL</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="register">
+    <div class="s__inner reg">
+      <div>
+        <h2>Register free</h2>
+        <p class="lead">Spaces are limited. Register now to secure your seat.</p>
+        <ul role="list"><li>Conference pack and T-shirt</li><li>Lunch on all three days</li><li>Access to every workshop</li><li>Certificate of participation</li></ul>
+      </div>
+      <div class="card">
+        <form novalidate>
+          <label for="rn">Full name</label><input id="rn" name="name" autocomplete="name" placeholder="Ama Owusu">
+          <label for="rp">Phone number</label><input id="rp" name="phone" type="tel" autocomplete="tel" placeholder="024 000 0000">
+          <label for="rc">Church or school</label><input id="rc" name="church" placeholder="Grace Chapel">
+          <label for="rs">T-shirt size</label><select id="rs" name="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+          <p class="err" role="alert"></p>
+          <button class="btn btn--orange" type="submit">Register</button>
+        </form>
+        <p class="ok" role="status" hidden></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="s s--sky">
+    <div class="s__inner venue">
+      <div class="map" aria-hidden="true"></div>
+      <div><h2>Getting there</h2><p class="lead">Grace Convention Centre, Accra. Free parking and shuttles from Circle and Madina.</p><p style="margin-top:1.2rem"><button class="btn btn--orange" data-toast="On a real site, this opens directions in Google Maps.">Get directions</button></p></div>
+    </div>
+  </section>
+
+  <div class="made">
+    <p>A sample website by <a href="../../">TeamAfot Events</a>. Rise Up 2027, its speakers and every detail here are made up.</p>
+    <a class="btn btn--orange" href="https://wa.me/233552318104?text=Hello%20TeamAfot%20Events%2C%20I%27d%20like%20a%20conference%20website." target="_blank" rel="noopener">I want one like this</a>
+    <a class="made__prog" href="../../programme/?e=conference">See the programme</a>
+  </div>
+</main>
+
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="../../assets/base.js"></script>
+<script>
+  EV.countdown("2027-08-05T09:00:00");
+  const tabs = [...document.querySelectorAll(".tab")];
+  const select = (t) => tabs.forEach((x) => { const on = x === t; x.setAttribute("aria-selected", on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute("aria-controls")).hidden = !on; });
+  tabs.forEach((t, i) => { t.addEventListener("click", () => select(t)); t.addEventListener("keydown", (e) => { if (e.key === "ArrowRight" || e.key === "ArrowLeft") { const n = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length]; select(n); n.focus(); } }); });
+  select(tabs[0]);
+  const form = document.querySelector(".card form"), err = form.querySelector(".err"), ok = document.querySelector(".card .ok");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim(), phone = form.phone.value.trim();
+    if (!name) { err.textContent = "Add your full name to register."; form.name.focus(); return; }
+    if (phone.replace(/\D/g, "").length < 9) { err.textContent = "Add a phone number we can reach you on."; form.phone.focus(); return; }
+    err.textContent = "";
+    ok.innerHTML = "";
+    const b = document.createElement("b"); b.textContent = `You're registered, ${name.split(" ")[0]}! `;
+    ok.append(b, "Your seat is saved. (Sample: on a real site, you'd get a confirmation by SMS or email.)");
+    ok.hidden = false;
+    form.reset();
+  });
+  ["name", "phone"].forEach((n) => form[n].addEventListener("input", () => (err.textContent = "")));
+</script>
+</body>
+</html>

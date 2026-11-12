@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programme | Sample | TeamAfot Events</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/base.css">
+<style>
+  :root { --bg: #24131A; --paper: #FFFCF6; --ink: #2B1F22; --mute: #7A6A63; --accent: #8B2D45; --accent-2: #C59A52; --line: rgba(197,154,82,.45); }
+  body { background: var(--bg); color: var(--ink); }
+  .wrap { max-width: 600px; margin: 0 auto; padding: 4.5rem 1rem 7rem; }
+  .booklet { background: var(--paper); border-radius: 6px; box-shadow: 0 30px 70px -30px rgba(0,0,0,.6); overflow: hidden; }
+  .pg { position: relative; padding: clamp(2.6rem, 8vw, 3.6rem) clamp(1.6rem, 6vw, 3rem); text-align: center; }
+  .pg + .pg { border-top: 1px solid var(--line); }
+  .pg--cover { padding-top: 4rem; padding-bottom: 4rem; background: var(--cover-bg, var(--paper)); color: var(--cover-ink, var(--ink)); }
+  .pg--cover::before { content: ""; position: absolute; inset: 14px; border: 1px solid var(--line); pointer-events: none; }
+  .kicker { font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--cover-mute, var(--mute)); }
+  .names { font-family: var(--head); font-weight: 400; font-size: var(--names-size, clamp(3rem, 12vw, 4.4rem)); line-height: 1.15; color: var(--cover-accent, var(--accent)); margin: .6rem 0; }
+  .names span { color: var(--accent-2); }
+  .orn { display: flex; align-items: center; justify-content: center; gap: .6rem; margin: 1.2rem auto; color: var(--accent-2); }
+  .orn i { width: 60px; height: 1px; background: currentColor; opacity: .7; }
+  .orn b { width: 7px; height: 7px; transform: rotate(45deg); background: currentColor; }
+  .date { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; letter-spacing: .03em; }
+  .venue { font-size: .82rem; letter-spacing: .2em; color: var(--cover-mute, var(--mute)); margin-top: .2rem; }
+  .verse { font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.5; margin-top: 2rem; color: var(--cover-mute, var(--mute)); }
+  .verse small { display: block; font-style: normal; font-family: var(--sans); font-size: .72rem; letter-spacing: .2em; margin-top: .4rem; }
+  h2 { font-family: var(--head); font-weight: 400; font-size: var(--h2-size, clamp(2.2rem, 8vw, 2.9rem)); line-height: 1.2; color: var(--accent); margin-bottom: 1.4rem; }
+  .order { list-style: none; margin: 0 auto; padding: 0; max-width: 26rem; counter-reset: o; }
+  .order li { counter-increment: o; display: grid; grid-template-columns: 2rem 1fr; gap: .8rem; text-align: left; padding: .7rem 0; border-bottom: 1px dashed var(--line); }
+  .order li::before { content: counter(o); font-family: var(--serif); font-weight: 600; font-size: 1.15rem; color: var(--accent-2); }
+  .order b { display: block; font-weight: 500; font-size: 1rem; }
+  .order span { color: var(--mute); font-size: .9rem; }
+  .party { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 1.5rem; max-width: 26rem; margin: 0 auto; }
+  .party div small { display: block; font-size: .7rem; letter-spacing: .18em; color: var(--mute); }
+  .party div p { font-family: var(--serif); font-weight: 600; font-size: 1.1rem; line-height: 1.3; }
+  .party .wide { grid-column: 1 / -1; }
+  .thanks p { font-family: var(--serif); font-size: 1.15rem; line-height: 1.6; max-width: 28rem; margin: 0 auto; }
+  .thanks .sign { font-family: var(--head); font-size: var(--sign-size, 2.4rem); color: var(--accent); margin-top: 1rem; line-height: 1.2; }
+  .sample { font-size: .78rem; color: var(--mute); margin-top: 1.6rem; }
+
+  .actions { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: flex; justify-content: center; gap: .6rem; flex-wrap: wrap; padding: .9rem 1rem calc(.9rem + env(safe-area-inset-bottom)); background: rgba(20,12,16,.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .actions .btn { color: #FBF6EF; border-color: rgba(251,246,239,.4); }
+  .actions .btn--main { background: #E9CF92; color: #24131A; border-color: #E9CF92; }
+
+  @media print {
+    @page { size: A5; margin: 10mm; }
+    body { background: #fff; }
+    .bar, .actions, .toast, .fx { display: none !important; }
+    .wrap { padding: 0; max-width: none; }
+    .booklet { box-shadow: none; border-radius: 0; }
+    .pg { break-inside: avoid; page-break-inside: avoid; }
+    .pg--cover { break-after: page; page-break-after: always; min-height: 180mm; display: flex; flex-direction: column; justify-content: center; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="bar"><a class="bar__back" href="../#samples">← TeamAfot Events</a><span class="bar__label">Sample event programme</span><a class="bar__cta" href="../#contact">Plan my event</a></div>
+
+<div class="wrap">
+  <article class="booklet">
+    <section class="pg pg--cover">
+      <p class="kicker" data-k="kicker"></p>
+      <h1 class="names" data-k="names"></h1>
+      <div class="orn" aria-hidden="true"><i></i><b></b><i></i></div>
+      <p class="date" data-k="date"></p>
+      <p class="venue" data-k="venue"></p>
+      <p class="verse"><span data-k="verse"></span><small data-k="verseRef"></small></p>
+    </section>
+    <section class="pg">
+      <h2 data-k="ceremonyTitle"></h2>
+      <ol class="order" data-list="ceremony"></ol>
+    </section>
+    <section class="pg">
+      <h2 data-k="receptionTitle"></h2>
+      <ol class="order" data-list="reception"></ol>
+    </section>
+    <section class="pg">
+      <h2>Hosts and team</h2>
+      <div class="party" data-party></div>
+    </section>
+    <section class="pg thanks">
+      <h2>Thank you</h2>
+      <p data-k="thanks"></p>
+      <p class="sign" data-k="sign"></p>
+      <p class="sample">Sample programme by TeamAfot Events. All names and details are made up.</p>
+    </section>
+  </article>
+</div>
+
+<div class="actions">
+  <button class="btn btn--main" id="print">Print or save as PDF</button>
+  <a class="btn" id="site" href="#">Back to the event website</a>
+</div>
+
+<script>
+  const P = {
+    "naming": { theme: { "--bg": "#FDE8DC", "--paper": "#FFFBF6", "--ink": "#4A3F55", "--mute": "#8A7F92", "--accent": "#6C5B7B", "--accent-2": "#E58F84", "--cover-bg": "radial-gradient(circle at 50% 30%, #FFFFFF, #FDE8DC 80%)", "--cover-accent": "#6C5B7B", "--head": "var(--script)", "--line": "rgba(229,143,132,.4)" },
+      a: "Nana", b: "Ama", amp: "", kicker: "The naming ceremony of", date: "Saturday, 6 March 2027", venue: "EAST LEGON, ACCRA", verse: "\u201cChildren are a heritage from the Lord.\u201d", verseRef: "PSALM 127:3",
+      ceremonyTitle: "Dawn naming rites", receptionTitle: "Thanksgiving and reception",
+      ceremony: [["Arrival of family and guests", "6:00 a.m. at the family house"], ["Opening prayer", ""], ["Presentation of the baby", "By the father"], ["Libation and blessings", "Family elders"], ["The naming", "Nana Ama Serwaa Owusu"], ["Water and drink rite", "Teaching truth and honesty"], ["Gifts and blessings", "Family and friends"]],
+      reception: [["Thanksgiving service", "10:00 a.m., Grace Chapel"], ["Dedication of the baby", ""], ["Reception at the family house", "12:30 p.m."], ["Opening prayer", ""], ["Lunch is served", ""], ["Words from the grandparents", ""], ["Vote of thanks", "Kwame and Abena Owusu"]],
+      party: [["Father", "Kwame Owusu"], ["Mother", "Abena Owusu"], ["Godmother", "Akua Asante"], ["Godfather", "Yaw Mensah"], ["Officiating minister", "Rev. Daniel Tetteh", true]],
+      thanks: "Thank you for welcoming our little one into the world with your love, prayers and presence.", sign: "The Owusu family", site: "../demo/naming/" },
+    "birthday": { theme: { "--bg": "#0E0E10", "--paper": "#19191C", "--ink": "#FBF6EC", "--mute": "#B5AC9C", "--accent": "#F3DDA6", "--accent-2": "#D4AE66", "--cover-bg": "radial-gradient(circle at 50% 30%, #2A2620, #0E0E10 80%)", "--cover-ink": "#FBF6EC", "--cover-mute": "#B5AC9C", "--cover-accent": "#F3DDA6", "--head": "var(--script)", "--line": "rgba(212,174,102,.35)" },
+      a: "Auntie Esi", b: "50", amp: "at", kicker: "A golden celebration", date: "Saturday, 17 April 2027 · 6:00 p.m.", venue: "THE PEARL BANQUET HALL, ACCRA", verse: "\u201cShe is clothed with strength and dignity, and she laughs without fear of the future.\u201d", verseRef: "PROVERBS 31:25",
+      ceremonyTitle: "The evening", receptionTitle: "Party time",
+      ceremony: [["Arrival and cocktails", "6:00 p.m."], ["Welcome by the MC", ""], ["Opening prayer", ""], ["Grand entrance of the celebrant", ""], ["Dinner is served", ""], ["Tributes", "Husband, children and siblings"], ["Photo slideshow", "Fifty years in pictures"]],
+      reception: [["Cutting of the cake", ""], ["Toast to Esi", ""], ["Words from the celebrant", ""], ["Vote of thanks", ""], ["Dance floor opens", "Live band, then the DJ"]],
+      party: [["Celebrant", "Esi Ansah"], ["Hosted by", "Kofi Ansah and children"], ["Master of ceremonies", "Nana Yaa Owusu"], ["Opening prayer", "Rev. Mrs Grace Ofori"], ["Music", "The Golden Band", true]],
+      thanks: "Thank you for celebrating fifty golden years with us. Your love makes every year brighter.", sign: "With love, Esi", site: "../demo/birthday/" },
+    "conference": { theme: { "--bg": "#14213D", "--paper": "#FFFFFF", "--ink": "#14213D", "--mute": "#5C6782", "--accent": "#14213D", "--accent-2": "#FF7A3D", "--cover-bg": "radial-gradient(circle at 70% 30%, #2C4478, #14213D 70%)", "--cover-ink": "#FFFFFF", "--cover-mute": "#C9D5F0", "--cover-accent": "#FFD166", "--head": "var(--sans)", "--names-size": "clamp(2.8rem, 12vw, 4.4rem)", "--h2-size": "1.9rem", "--sign-size": "1.6rem", "--line": "rgba(20,33,61,.15)" },
+      a: "RISE", b: "UP", amp: "", kicker: "Youth Conference 2027", date: "5 – 7 August 2027", venue: "GRACE CONVENTION CENTRE, ACCRA", verse: "\u201cArise, shine, for your light has come.\u201d", verseRef: "ISAIAH 60:1",
+      ceremonyTitle: "Day one: Arise", receptionTitle: "Days two and three",
+      ceremony: [["Registration and welcome", "9:00 a.m."], ["Opening worship", "10:00 a.m."], ["Keynote: Arise", "Rev. Kofi Amoako"], ["Lunch", "1:00 p.m."], ["Workshops", "2:00 p.m., rooms A to C"], ["Evening session", "5:00 p.m."]],
+      reception: [["Morning devotion", "Friday, 9:30 a.m."], ["Panel: Shining at work", "Dr. Esi Nyarko and Yaw Boakye"], ["Mentorship circles", "Friday, 2:00 p.m."], ["Youth night", "Friday, 7:00 p.m."], ["Commissioning service", "Saturday, 9:30 a.m."], ["Community outreach", "Saturday, 12:00 p.m."], ["Closing celebration", "Saturday, 4:00 p.m."]],
+      party: [["Host", "Grace Youth Ministry"], ["Convener", "Pastor Kwesi Ofori"], ["Keynote speaker", "Rev. Kofi Amoako"], ["Worship", "Abena Darko"], ["Master of ceremonies", "Selorm Agbeko", true]],
+      thanks: "Thank you for joining us. We pray you leave ready to arise, shine and go.", sign: "The Rise Up team", site: "../demo/conference/" },
+  };
+  const slug = new URLSearchParams(location.search).get("e");
+  const c = P[slug] || P["naming"];
+  for (const [k, v] of Object.entries(c.theme)) document.documentElement.style.setProperty(k, v);
+  document.title = `${c.kicker} | Programme | TeamAfot Events`;
+  const set = (k, v) => document.querySelectorAll(`[data-k="${k}"]`).forEach((el) => (el.textContent = v));
+  ["kicker", "date", "venue", "verse", "verseRef", "ceremonyTitle", "receptionTitle", "thanks", "sign"].forEach((k) => set(k, c[k]));
+  const names = document.querySelector('[data-k="names"]');
+  if (c.amp) names.append(c.a, " ", Object.assign(document.createElement("span"), { textContent: c.amp }), " ", c.b); else names.append(c.a, " ", Object.assign(document.createElement("span"), { textContent: c.b }));
+  const fill = (name, items) => {
+    const ol = document.querySelector(`[data-list="${name}"]`);
+    items.forEach(([t, s]) => { const li = document.createElement("li"); const d = document.createElement("div"); const b = document.createElement("b"); b.textContent = t; d.append(b); if (s) { const sp = document.createElement("span"); sp.textContent = s; d.append(sp); } li.append(d); ol.append(li); });
+  };
+  fill("ceremony", c.ceremony); fill("reception", c.reception);
+  const party = document.querySelector("[data-party]");
+  c.party.forEach(([role, who, wide]) => { const d = document.createElement("div"); if (wide) d.className = "wide"; const s = document.createElement("small"); s.textContent = role.toUpperCase(); const p = document.createElement("p"); p.textContent = who; d.append(s, p); party.append(d); });
+  document.getElementById("site").href = c.site;
+  document.getElementById("print").addEventListener("click", () => window.print());
+</script>
+</body>
+</html>

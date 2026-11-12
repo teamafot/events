@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auntie Esi at 50 | Sample | TeamAfot Events</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/base.css">
+<style>
+  :root { --black: #0E0E10; --char: #19191C; --gold: #D4AE66; --gold-soft: #F3DDA6; --ivory: #FBF6EC; --mute: #B5AC9C; --accent: #D4AE66; --field: rgba(255,255,255,.05); --field-line: rgba(212,174,102,.35);
+    --foil: linear-gradient(100deg, #B88A44 0%, #E9CF92 22%, #FFF1CF 38%, #D4AE66 55%, #F3DDA6 72%, #B88A44 100%); --photo-fallback: radial-gradient(circle at 50% 35%, #2E2A24, #121214 80%); }
+  body { background: var(--black); color: var(--ivory); }
+  .foil { background: var(--foil); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: sheen 5s ease-in-out infinite; }
+  @keyframes sheen { 50% { background-position: 100% 0; } }
+
+  /* Opening: pop the balloon */
+  .pop { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; text-align: center; padding: 3.5rem 1rem 2rem; background: radial-gradient(36rem 28rem at 50% 45%, #2A2620, var(--black) 75%); transition: opacity .7s, visibility .7s; }
+  .pop.is-done { opacity: 0; visibility: hidden; }
+  .pop p { font-size: .82rem; letter-spacing: .26em; color: var(--mute); }
+  .balloon { position: relative; width: 210px; height: 290px; margin: 1.4rem auto 0; border: 0; background: none; cursor: pointer; animation: hover 3s ease-in-out infinite; }
+  @keyframes hover { 50% { transform: translateY(-14px) rotate(2deg); } }
+  .balloon__b { position: absolute; left: 0; right: 0; top: 0; height: 230px; border-radius: 50% 50% 48% 48% / 55% 55% 45% 45%; background: radial-gradient(circle at 32% 26%, #FFF6DA 0 8%, transparent 26%), radial-gradient(circle at 50% 45%, #F0D38E, #C79A47 70%, #8D6624); box-shadow: inset -14px -18px 30px rgba(0,0,0,.25); display: grid; place-items: center; transition: transform .25s ease-in, opacity .25s; }
+  .balloon__b b { font-weight: 500; font-size: 5.6rem; color: #6B4B17; letter-spacing: -.04em; text-shadow: 0 1px 0 rgba(255,255,255,.4); }
+  .balloon__knot { position: absolute; left: 50%; top: 226px; width: 16px; height: 12px; margin-left: -8px; background: #A8803A; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+  .balloon__s { position: absolute; left: 50%; top: 236px; width: 2px; height: 60px; background: rgba(243,221,166,.5); }
+  .pop__hint { margin-top: 1.4rem; color: var(--gold-soft) !important; }
+  .pop.is-popped .balloon { animation: none; }
+  .pop.is-popped .balloon__b { transform: scale(1.35); opacity: 0; }
+  .pop.is-popped .balloon__knot, .pop.is-popped .balloon__s { opacity: 0; transition: opacity .2s; }
+
+  .hero { position: relative; min-height: 100vh; min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 6rem 1.5rem 4rem; overflow: hidden; background: radial-gradient(40rem 30rem at 50% 40%, #2A2620, var(--black) 75%); }
+  .hero::before { content: ""; position: absolute; inset: 4.6rem 1.4rem 1.4rem; border: 1px solid rgba(212,174,102,.3); pointer-events: none; }
+  .hero__pre { font-size: .82rem; letter-spacing: .3em; color: var(--mute); }
+  .fifty { font-weight: 500; font-size: clamp(9rem, 32vw, 16rem); line-height: .85; letter-spacing: -.06em; display: inline-block; padding: 0 .06em; }
+  .hero h1 { font-family: var(--script); font-weight: 400; font-size: clamp(2.8rem, 9vw, 4.6rem); line-height: 1.1; color: var(--gold-soft); margin-top: .4rem; }
+  .hero__line { font-family: var(--serif); font-style: italic; font-size: 1.35rem; color: var(--mute); margin-top: .6rem; }
+  .hero__date { font-size: .95rem; letter-spacing: .2em; margin-top: 1.4rem; }
+  .hero .countdown { margin: 1.8rem auto 0; }
+  .hero .countdown div { border: 1px solid rgba(212,174,102,.35); padding: .6rem 0; }
+  .hero .countdown b { color: var(--gold-soft); }
+  .spark { position: absolute; width: 6px; height: 6px; background: var(--gold-soft); transform: rotate(45deg); animation: tw 2.6s ease-in-out infinite; }
+  @keyframes tw { 50% { opacity: .15; transform: rotate(45deg) scale(.4); } }
+
+  .s { padding: clamp(4.5rem, 9vw, 6.5rem) 1.5rem; text-align: center; }
+  .s h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.1; }
+  .s .lead { color: var(--mute); max-width: 34rem; margin: .6rem auto 0; }
+  .s--char { background: var(--char); }
+  .portrait { width: min(240px, 60vw); aspect-ratio: 4 / 5; margin: 0 auto 2rem; border-radius: 6px; box-shadow: 0 0 0 1px var(--gold), 0 0 0 10px var(--char), 0 0 0 11px rgba(212,174,102,.35); }
+  .portrait .photo__mono { color: rgba(243,221,166,.6); }
+
+  .decades { list-style: none; margin: 3rem auto 0; padding: 0; max-width: 760px; position: relative; }
+  .decades::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: linear-gradient(var(--gold), rgba(212,174,102,.1)); }
+  .decades li { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 2rem; position: relative; text-align: right; }
+  .decades li::after { content: ""; position: absolute; left: 50%; top: .6rem; width: 11px; height: 11px; margin-left: -5px; transform: rotate(45deg); background: var(--gold); }
+  .decades li:nth-child(even) { text-align: left; }
+  .decades li:nth-child(even) .yr { order: 2; text-align: left; }
+  .decades .yr { font-weight: 500; font-size: 2rem; }
+  .decades h3 { font-family: var(--serif); font-weight: 600; font-size: 1.35rem; color: var(--gold-soft); }
+  .decades p { color: var(--mute); font-size: .95rem; }
+  .decades li:nth-child(odd) .txt { order: 2; text-align: left; }
+  .decades li:nth-child(odd) .yr { text-align: right; }
+
+  .love { display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; max-width: 46rem; margin: 2.2rem auto 0; }
+  .love span { border: 1px solid rgba(212,174,102,.4); border-radius: 999px; padding: .6rem 1.1rem; font-size: .95rem; color: var(--gold-soft); animation: in .6s var(--ease) both; }
+  .party { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 960px; margin: 2.4rem auto 0; }
+  .party div { padding: 2rem 1.4rem; border: 1px solid rgba(212,174,102,.3); background: rgba(255,255,255,.02); }
+  .party small { font-size: .72rem; letter-spacing: .2em; color: var(--gold); }
+  .party h3 { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; margin: .4rem 0 .2rem; }
+  .party p { color: var(--mute); font-size: .95rem; }
+  .btn--gold { background: var(--foil); background-size: 200% 100%; color: var(--black); border-color: transparent; }
+  .btn--line { color: var(--gold-soft); border-color: rgba(212,174,102,.45); }
+  .gift { max-width: 22rem; margin: 2rem auto 0; padding: 1.8rem; border: 1px solid rgba(212,174,102,.35); }
+  .gift strong { display: block; font-weight: 500; font-size: 1.9rem; color: var(--gold-soft); margin: .2rem 0 1rem; }
+  .gift small { font-size: .72rem; letter-spacing: .2em; color: var(--mute); }
+  .made a:not(.btn) { color: var(--gold-soft); }
+  .made__prog { color: var(--gold-soft); }
+  @media (max-width: 760px) {
+    .party { grid-template-columns: 1fr; }
+    .decades::before, .decades li::after { left: 1rem; }
+    .decades li, .decades li:nth-child(even) { grid-template-columns: 1fr; gap: .2rem; padding-left: 2.6rem; text-align: left; }
+    .decades li .yr, .decades li .txt, .decades li:nth-child(even) .yr, .decades li:nth-child(odd) .yr, .decades li:nth-child(odd) .txt { order: initial; text-align: left; }
+  }
+</style>
+</head>
+<body class="is-locked">
+<div class="bar"><a href="../../#samples">← TeamAfot Events</a><span class="bar__label">Sample birthday website</span><a class="bar__cta" href="../../#contact">Plan my event</a></div>
+
+<div class="pop" aria-label="Golden balloon">
+  <div>
+    <p>YOU'RE INVITED TO A GOLDEN CELEBRATION</p>
+    <button class="balloon" aria-label="Pop the balloon"><span class="balloon__b"><b>50</b></span><span class="balloon__knot"></span><span class="balloon__s"></span></button>
+    <p class="pop__hint">TAP THE BALLOON TO POP IT</p>
+  </div>
+</div>
+
+<main>
+  <header class="hero">
+    <span class="spark" style="left:14%;top:24%"></span><span class="spark" style="left:84%;top:20%;animation-delay:.8s"></span><span class="spark" style="left:20%;top:72%;animation-delay:1.4s"></span><span class="spark" style="left:78%;top:68%;animation-delay:.4s"></span><span class="spark" style="left:50%;top:14%;animation-delay:2s"></span>
+    <div>
+      <p class="hero__pre">CELEBRATING</p>
+      <div class="fifty foil">50</div>
+      <h1>Auntie Esi's Golden Jubilee</h1>
+      <p class="hero__line">Fifty years of grace, laughter and love</p>
+      <p class="hero__date">SATURDAY · 17 APRIL 2027 · ACCRA</p>
+      <div class="countdown">
+        <div><b data-cd="d">0</b><small>days</small></div><div><b data-cd="h">00</b><small>hours</small></div>
+        <div><b data-cd="m">00</b><small>mins</small></div><div><b data-cd="s">00</b><small>secs</small></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="s s--char">
+    <div class="photo portrait"><img src="../../assets/photos/birthday-1.jpg" alt="Auntie Esi"><span class="photo__mono">E</span></div>
+    <h2>Five decades of Esi</h2>
+    <p class="lead">From Takoradi to the world, one beautiful chapter at a time.</p>
+    <ol class="decades">
+      <li><span class="yr foil">1977</span><div class="txt"><h3>A star is born</h3><p>Esi arrives in Takoradi, the first of four children.</p></div></li>
+      <li><span class="yr foil">1995</span><div class="txt"><h3>University days</h3><p>Off to Legon, where she studied accounting and found lifelong friends.</p></div></li>
+      <li><span class="yr foil">2004</span><div class="txt"><h3>Love and family</h3><p>She marries Kofi, and soon after, two wonderful children join the family.</p></div></li>
+      <li><span class="yr foil">2012</span><div class="txt"><h3>The business</h3><p>She opens her own consultancy, now one of the most trusted in Accra.</p></div></li>
+      <li><span class="yr foil">2027</span><div class="txt"><h3>Golden at fifty</h3><p>And now we celebrate her, with all of you.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="s">
+    <h2>Why we love her</h2>
+    <p class="lead">Just a few of the fifty reasons.</p>
+    <div class="love">
+      <span>Her laugh fills the room</span><span>Best jollof in the family</span><span>Always the first to help</span><span>Never misses a birthday</span><span>Prays for everyone by name</span><span>Fearless businesswoman</span><span>Dances like nobody's watching</span><span>Wise beyond her years</span>
+    </div>
+  </section>
+
+  <section class="s s--char">
+    <h2>The party</h2>
+    <div class="party">
+      <div><small>WHEN</small><h3>Saturday, 17 April</h3><p>6:00 p.m. until late</p></div>
+      <div><small>WHERE</small><h3>The Pearl Banquet Hall</h3><p>Airport Residential Area, Accra</p><button class="btn btn--line" style="margin-top:1rem" data-toast="On a real site, this opens directions in Google Maps.">Directions</button></div>
+      <div><small>DRESS CODE</small><h3>All white and gold</h3><p>Glamorous, elegant and ready to dance</p></div>
+    </div>
+    <p style="margin-top:2rem"><a class="btn btn--gold" href="../../programme/?e=birthday">View the programme</a></p>
+  </section>
+
+  <section class="s">
+    <h2>Will you celebrate with us?</h2>
+    <p class="lead">Kindly reply by 3 April 2027.</p>
+    <form class="rsvp" novalidate>
+      <label for="n">Your full name</label><input id="n" name="name" autocomplete="name" placeholder="Ama Owusu">
+      <fieldset><legend>Will you attend?</legend>
+        <label class="choice"><input type="radio" name="attend" value="yes" checked> I'll be there in white and gold</label>
+        <label class="choice"><input type="radio" name="attend" value="no"> I'll celebrate from afar</label></fieldset>
+      <label for="g">Guests, including you</label><select id="g" name="guests"><option>1</option><option>2</option></select>
+      <p class="rsvp__error" role="alert"></p>
+      <button class="btn btn--gold" type="submit">Send RSVP</button>
+      <p class="rsvp__done" role="status" style="color:var(--gold-soft)"></p>
+    </form>
+  </section>
+
+  <section class="s s--char">
+    <h2>Gifts</h2>
+    <p class="lead">Your presence is the gift. If you'd like to bless her further:</p>
+    <div class="gift"><small>MOBILE MONEY (SAMPLE)</small><strong>024 000 0000</strong><button class="btn btn--line" data-copy="0240000000">Copy number</button></div>
+  </section>
+
+  <div class="made">
+    <p>A sample website by <a href="../../">TeamAfot Events</a>. Auntie Esi and every detail here are made up.</p>
+    <a class="btn btn--gold" href="https://wa.me/233552318104?text=Hello%20TeamAfot%20Events%2C%20I%27d%20like%20a%20birthday%20website." target="_blank" rel="noopener">I want one like this</a>
+    <a class="made__prog" href="../../programme/?e=birthday">See the programme</a>
+  </div>
+</main>
+
+<div class="toast" role="status" aria-live="polite"></div>
+<canvas class="fx" aria-hidden="true"></canvas>
+<script src="../../assets/base.js"></script>
+<script>
+  EV.countdown("2027-04-17T18:00:00");
+  EV.rsvp(document.querySelector(".rsvp"), "Auntie Esi");
+  const pop = document.querySelector(".pop");
+  pop.querySelector(".balloon").addEventListener("click", () => {
+    if (pop.classList.contains("is-popped")) return;
+    pop.classList.add("is-popped");
+    EV.shower(["#F3DDA6", "#D4AE66", "#FFF1CF", "#FFFFFF"], { shape: "flake", count: 150 });
+    setTimeout(() => { pop.classList.add("is-done"); document.body.classList.remove("is-locked"); }, 700);
+    setTimeout(() => pop.remove(), 1500);
+  });
+</script>
+</body>
+</html>

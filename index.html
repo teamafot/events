@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TeamAfot Events | Event Websites and Programmes in Ghana</title>
+  <meta name="description" content="TeamAfot Events creates websites and digital programmes for birthdays, naming ceremonies, graduations, church programmes, conferences and launches in Ghana.">
+  <meta name="theme-color" content="#1E2A38">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/base.css">
+  <style>
+    :root { --navy: #1E2A38; --deep: #16202B; --cream: #FFF8EE; --coral: #FF6B5B; --sun: #FFC845; --teal: #1FB5A6; --lilac: #9B8CFF; --ink: #1E2A38; --mute: #5E6B78; --brass: #B8975A; }
+    body { background: var(--cream); color: var(--ink); }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+    .nav { position: absolute; top: 0; left: 0; right: 0; z-index: 10; }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 0; }
+    .brand { text-decoration: none; color: #fff; line-height: 1.1; }
+    .brand b { font-weight: 500; font-size: 1.35rem; letter-spacing: .02em; }
+    .brand b span { color: var(--sun); }
+    .brand small { display: block; font-size: .72rem; letter-spacing: .26em; color: #C9D3DD; }
+    .nav .btn { color: #fff; border-color: rgba(255,255,255,.4); padding: .6rem 1.1rem; }
+
+    .hero { position: relative; overflow: hidden; color: #fff; background: radial-gradient(40rem 30rem at 75% 40%, #2C3E55, var(--deep) 70%); min-height: 90vh; display: grid; align-items: center; }
+    .hero__inner { position: relative; z-index: 2; padding: 7rem 0 5rem; max-width: 40rem; }
+    @media (max-width: 900px) { .balloons { opacity: .35; } }
+    .hero h1 { font-weight: 500; font-size: clamp(2.6rem, 6.6vw, 5rem); line-height: 1.02; letter-spacing: -.01em; }
+    .hero h1 em { font-family: var(--script); font-style: normal; font-weight: 400; color: var(--sun); font-size: 1.15em; }
+    .hero p { margin-top: 1.5rem; color: #C9D3DD; font-size: 1.1rem; max-width: 34rem; }
+    .hero__actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 2.2rem; }
+    .btn--sun { background: var(--sun); color: var(--deep); border-color: var(--sun); }
+    .btn--line { color: #fff; border-color: rgba(255,255,255,.4); }
+    .balloons { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+    .bl { position: absolute; bottom: -160px; width: 70px; height: 86px; border-radius: 50% 50% 48% 48%; background: radial-gradient(circle at 32% 28%, rgba(255,255,255,.55), transparent 30%), var(--c); animation: up var(--d) linear infinite; animation-delay: var(--w); opacity: .9; }
+    .bl::after { content: ""; position: absolute; left: 50%; top: 100%; width: 1px; height: 70px; background: rgba(255,255,255,.35); }
+    @keyframes up { from { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-60vh) rotate(4deg); } to { transform: translateY(-120vh) rotate(-4deg); } }
+
+    .s { padding: clamp(5rem, 10vw, 7rem) 0; }
+    .head { text-align: center; max-width: 40rem; margin: 0 auto clamp(2.5rem, 5vw, 3.5rem); }
+    .head h2 { font-weight: 500; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.1; }
+    .head p { margin-top: 1rem; color: var(--mute); }
+    .kinds { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .kinds li { background: #fff; border-radius: 22px; padding: 1.8rem 1.6rem; box-shadow: 0 16px 34px -26px rgba(30,42,56,.4); }
+    .kinds i { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 16px; font-style: normal; font-size: 1.6rem; background: var(--c); margin-bottom: 1rem; }
+    .kinds h3 { font-weight: 500; font-size: 1.2rem; }
+    .kinds p { color: var(--mute); font-size: .96rem; margin-top: .3rem; }
+
+    .samples { background: #fff; }
+    .cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+    .card { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .card > a:first-child { display: block; width: 100%; text-decoration: none; color: inherit; }
+    .card__art { position: relative; aspect-ratio: 3 / 4; border-radius: 22px; overflow: hidden; display: grid; place-items: center; padding: 1.5rem; transition: transform .5s var(--ease); box-shadow: 0 30px 50px -34px rgba(30,42,56,.5); }
+    .card > a:first-child:hover .card__art { transform: translateY(-6px) rotate(-.6deg); }
+    .card__art small { display: block; font-size: .8rem; letter-spacing: .14em; }
+    .card__art b { display: block; font-family: var(--script); font-weight: 400; font-size: 2.6rem; line-height: 1.1; margin: .4rem 0; }
+    .card__tap { position: absolute; left: 50%; bottom: 1.3rem; transform: translateX(-50%); font-size: .75rem; letter-spacing: .1em; padding: .5rem .9rem; border-radius: 999px; background: rgba(255,255,255,.92); color: var(--navy); white-space: nowrap; }
+    .card h3 { font-weight: 500; font-size: 1.2rem; margin-top: 1.2rem; }
+    .card p { color: var(--mute); font-size: .95rem; max-width: 18rem; margin-top: .3rem; }
+    .card .prog { margin-top: .6rem; font-size: .88rem; font-weight: 500; color: var(--coral); text-underline-offset: 4px; }
+    .art--naming { background: radial-gradient(circle at 50% 30%, #FFFFFF, #FDE8DC 70%); color: #6C5B7B; }
+    .art--naming .big { font-size: 3rem; }
+    .art--birthday { background: radial-gradient(circle at 50% 30%, #2A2A2E, #0E0E10 80%); color: #F3DDA6; }
+    .art--birthday .fifty { font-weight: 500; font-size: 5rem; line-height: 1; background: linear-gradient(100deg, #B88A44, #FFF1CF 45%, #D4AE66); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .art--conf { background: linear-gradient(150deg, #1E2A38, #2C3E55); color: #fff; }
+    .art--conf b { font-family: var(--sans); font-weight: 500; font-size: 2rem; letter-spacing: -.01em; }
+    .art--conf .tag { display: inline-block; background: var(--coral); padding: .25rem .7rem; border-radius: 999px; font-size: .72rem; letter-spacing: .14em; }
+
+    .prog-band { background: var(--navy); color: #fff; }
+    .prog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+    .prog-band h2 { font-weight: 500; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.1; }
+    .prog-band p { color: #C9D3DD; margin-top: 1rem; }
+    .prog-band ul { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: .5rem; }
+    .prog-band ul li::before { content: "✓  "; color: var(--sun); }
+    .phone { width: min(280px, 80vw); margin: 0 auto; background: #0B1118; border-radius: 34px; padding: 10px; box-shadow: 0 40px 70px -30px rgba(0,0,0,.7); }
+    .phone__screen { background: var(--cream); border-radius: 26px; padding: 1.6rem 1.2rem; color: var(--ink); text-align: center; }
+    .phone__screen small { font-size: .7rem; letter-spacing: .16em; color: var(--coral); }
+    .phone__screen b { display: block; font-size: 1.15rem; font-weight: 500; margin: .2rem 0 .8rem; }
+    .phone__screen ol { list-style: none; padding: 0; margin: 0; text-align: left; font-size: .82rem; }
+    .phone__screen li { display: flex; gap: .6rem; padding: .45rem 0; border-bottom: 1px dashed rgba(30,42,56,.15); }
+    .phone__screen time { color: var(--coral); font-weight: 500; min-width: 3rem; }
+
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; counter-reset: s; }
+    .steps li { counter-increment: s; text-align: center; }
+    .steps li::before { content: counter(s); display: grid; place-items: center; width: 3rem; height: 3rem; margin: 0 auto 1rem; border-radius: 50%; background: var(--c, var(--sun)); color: var(--deep); font-weight: 500; font-size: 1.2rem; }
+    .steps li:nth-child(2) { --c: var(--coral); } .steps li:nth-child(3) { --c: var(--teal); } .steps li:nth-child(4) { --c: var(--lilac); }
+    .steps h3 { font-weight: 500; font-size: 1.1rem; }
+    .steps p { color: var(--mute); font-size: .95rem; margin-top: .3rem; }
+
+    .contact { background: var(--deep); color: #fff; text-align: center; }
+    .contact h2 { font-weight: 500; font-size: clamp(2rem, 4.6vw, 3.2rem); }
+    .contact p { color: #C9D3DD; max-width: 34rem; margin: 1rem auto 0; }
+    .contact .row { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+    .contact small { display: block; margin-top: 1.3rem; color: var(--sun); letter-spacing: .06em; }
+    .footer { background: #0F161E; color: #8C98A4; padding: 2.2rem 0; font-size: .88rem; }
+    .footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .footer a { color: var(--sun); }
+
+    @media (max-width: 900px) { .kinds, .cards { grid-template-columns: 1fr 1fr; } .prog-grid { grid-template-columns: 1fr; } .steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .kinds, .cards, .steps { grid-template-columns: 1fr; } .cards { max-width: 330px; margin: 0 auto; } .nav .btn { display: none; } }
+  </style>
+</head>
+<body>
+<header class="nav"><div class="wrap nav__inner">
+  <a class="brand" href="#top"><b>TeamAfot <span>Events</span></b><small>WEBSITES FOR EVERY CELEBRATION</small></a>
+  <a class="btn" href="#contact">Plan my event</a>
+</div></header>
+
+<main id="top">
+  <section class="hero">
+    <div class="balloons" aria-hidden="true">
+      <span class="bl" style="left:86%;--c:#FF6B5B;--d:14s;--w:0s"></span><span class="bl" style="left:74%;--c:#FFC845;--d:17s;--w:-5s"></span>
+      <span class="bl" style="left:82%;--c:#1FB5A6;--d:15s;--w:-9s"></span><span class="bl" style="left:90%;--c:#9B8CFF;--d:19s;--w:-3s"></span>
+      <span class="bl" style="left:94%;--c:#9B8CFF;--d:20s;--w:-12s"></span><span class="bl" style="left:76%;--c:#FF6B5B;--d:16s;--w:-7s"></span>
+    </div>
+    <div class="wrap"><div class="hero__inner">
+      <h1>Every celebration deserves <em>its own website.</em></h1>
+      <p>Birthdays, naming ceremonies, graduations, church programmes, conferences and launches. One beautiful link with the details, programme, RSVP and directions, shared on WhatsApp.</p>
+      <div class="hero__actions"><a class="btn btn--sun" href="#contact">Plan my event</a><a class="btn btn--line" href="#samples">See samples</a></div>
+    </div></div>
+  </section>
+
+  <section class="s">
+    <div class="wrap">
+      <div class="head"><h2>Whatever you're celebrating.</h2><p>Each event gets its own design, colours and programme, made around the people at its heart.</p></div>
+      <ul class="kinds" role="list">
+        <li><i style="--c:#FFE3DE">🎂</i><h3>Birthdays and milestones</h3><p>From first birthdays to 50th and 70th celebrations.</p></li>
+        <li><i style="--c:#FFF1C7">👶🏾</i><h3>Naming ceremonies</h3><p>Outdooring invitations with the baby's name, meaning and programme.</p></li>
+        <li><i style="--c:#D7F3EF">🎓</i><h3>Graduations</h3><p>Celebrate the graduate with photos, a programme and a party RSVP.</p></li>
+        <li><i style="--c:#E8E4FF">⛪</i><h3>Church programmes</h3><p>Anniversaries, harvests, ordinations and special services.</p></li>
+        <li><i style="--c:#FFE3DE">🎤</i><h3>Conferences and seminars</h3><p>Speakers, agenda, registration and venue in one place.</p></li>
+        <li><i style="--c:#FFF1C7">🚀</i><h3>Launches and corporate events</h3><p>Product launches, dinners, awards and company anniversaries.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="s samples" id="samples">
+    <div class="wrap">
+      <div class="head"><h2>Samples.</h2><p>Tap any sample to step inside. Each one comes with its own programme.</p></div>
+      <ul class="cards" role="list">
+        <li class="card"><a href="demo/naming/"><div class="card__art art--naming"><div><div class="big">🎁</div><small>THE NAMING CEREMONY OF</small><b>Nana Ama</b><small>SATURDAY · 6 MARCH 2027</small></div><span class="card__tap">Tap to see</span></div><h3>Naming ceremony</h3><p>Unwrap a gift box to meet the baby, the meaning of her name and the programme.</p></a><a class="prog" href="programme/?e=naming">View the programme</a></li>
+        <li class="card"><a href="demo/birthday/"><div class="card__art art--birthday"><div><small>AUNTIE ESI AT</small><div class="fifty">50</div><b>Golden Jubilee</b></div><span class="card__tap">Tap to see</span></div><h3>50th birthday</h3><p>Pop the balloon for a black-and-gold party with a decade-by-decade journey.</p></a><a class="prog" href="programme/?e=birthday">View the programme</a></li>
+        <li class="card"><a href="demo/conference/"><div class="card__art art--conf"><div><span class="tag">YOUTH CONFERENCE 2027</span><b style="margin-top:.8rem">RISE UP</b><small>ACCRA · 3 DAYS</small></div><span class="card__tap">Tap to see</span></div><h3>Youth conference</h3><p>Speakers, a day-by-day agenda and online registration for a church conference.</p></a><a class="prog" href="programme/?e=conference">View the programme</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="s prog-band">
+    <div class="wrap prog-grid">
+      <div>
+        <h2>Every event comes with a digital programme.</h2>
+        <p>No more running out of printed programmes or guests asking "what's next?". Your programme opens on every phone and prints beautifully too.</p>
+        <ul role="list"><li>Order of events with times</li><li>Hosts, speakers and MCs</li><li>Hymns, readings and special notes</li><li>Print or save as PDF in one tap</li></ul>
+      </div>
+      <div class="phone" aria-hidden="true"><div class="phone__screen"><small>PROGRAMME</small><b>Auntie Esi at 50</b><ol><li><time>6:00</time>Arrival and cocktails</li><li><time>7:00</time>Opening prayer</li><li><time>7:15</time>Dinner is served</li><li><time>8:00</time>Tributes from family</li><li><time>8:45</time>Cake cutting</li><li><time>9:00</time>Dance floor opens</li></ol></div></div>
+    </div>
+  </section>
+
+  <section class="s">
+    <div class="wrap">
+      <div class="head"><h2>How it works.</h2></div>
+      <ol class="steps" role="list">
+        <li><h3>Tell us about it</h3><p>Share the date, venue, colours and what you're celebrating.</p></li>
+        <li><h3>We design it</h3><p>Your website and programme, made to match your theme.</p></li>
+        <li><h3>You review</h3><p>Tell us what to change until it's just right.</p></li>
+        <li><h3>Share one link</h3><p>Send it on WhatsApp and watch the RSVPs come in.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="s contact" id="contact">
+    <div class="wrap">
+      <h2>Let's plan your celebration.</h2>
+      <p>Tell us the occasion and the date, and we'll take it from there.</p>
+      <div class="row">
+        <a class="btn btn--sun" href="https://wa.me/233552318104?text=Hello%20TeamAfot%20Events%2C%20I%27d%20like%20a%20website%20for%20my%20event." target="_blank" rel="noopener">Chat with us on WhatsApp</a>
+        <a class="btn btn--line" href="mailto:teamafot@gmail.com?subject=Event%20website%20enquiry">Email us</a>
+      </div>
+      <small>055 231 8104 · teamafot@gmail.com</small>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="wrap"><span>TeamAfot Events. Accra, Ghana.</span><span>Part of <a href="https://teamafot.github.io/">TeamAfot</a>. Every solution is a team effort.</span></div></footer>
+</body>
+</html>

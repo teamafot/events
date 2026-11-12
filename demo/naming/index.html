@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nana Ama's naming ceremony | Sample | TeamAfot Events</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/base.css">
+<style>
+  :root { --cream: #FFFBF6; --peach: #FDE8DC; --mint: #D6F1E8; --lav: #EDE6F7; --plum: #6C5B7B; --rose: #E58F84; --sun: #F7C66B; --ink: #4A3F55; --mute: #8A7F92; --accent: #E58F84; --photo-fallback: radial-gradient(circle at 50% 35%, #FFFFFF, #FBD9CC 80%); }
+  body { background: var(--cream); color: var(--ink); }
+  .bar { background: rgba(74,63,85,.92); }
+
+  /* Opening: gift box */
+  .gift { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; text-align: center; padding: 3.5rem 1rem 2rem; background: radial-gradient(36rem 28rem at 50% 45%, #FFFFFF, var(--peach) 80%); transition: opacity .9s, visibility .9s; }
+  .gift.is-done { opacity: 0; visibility: hidden; }
+  .gift p { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--mute); }
+  .gift h1 { font-family: var(--script); font-weight: 400; font-size: clamp(2.6rem, 9vw, 3.6rem); color: var(--plum); line-height: 1.1; margin: .2rem 0 2rem; }
+  .box { position: relative; width: 190px; height: 190px; margin: 0 auto; border: 0; background: none; cursor: pointer; }
+  .box__base { position: absolute; left: 10px; right: 10px; bottom: 0; height: 130px; border-radius: 10px; background: linear-gradient(90deg, transparent 43%, var(--sun) 43% 57%, transparent 57%), linear-gradient(160deg, #F4B3A8, var(--rose)); box-shadow: 0 24px 40px -20px rgba(108,91,123,.6); }
+  .box__lid { position: absolute; left: 0; right: 0; top: 34px; height: 36px; border-radius: 8px; background: linear-gradient(90deg, transparent 43%, var(--sun) 43% 57%, transparent 57%), linear-gradient(160deg, #F7C2B9, #EA9A8F); transition: transform .9s cubic-bezier(.3,1.6,.5,1), opacity .9s; transform-origin: 30% 100%; }
+  .box__bow { position: absolute; left: 50%; top: -22px; width: 80px; height: 30px; margin-left: -40px; }
+  .box__bow::before, .box__bow::after { content: ""; position: absolute; top: 0; width: 38px; height: 28px; border: 8px solid var(--sun); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; }
+  .box__bow::before { left: 0; transform: rotate(-20deg); } .box__bow::after { right: 0; transform: rotate(20deg); }
+  .box { animation: wiggle 2.6s ease-in-out infinite; }
+  @keyframes wiggle { 0%, 80%, 100% { transform: rotate(0); } 85% { transform: rotate(-4deg); } 90% { transform: rotate(4deg); } 95% { transform: rotate(-2deg); } }
+  .gift__hint { margin-top: 1.6rem; font-family: var(--sans) !important; font-style: normal !important; font-size: .85rem !important; letter-spacing: .14em; color: var(--rose) !important; }
+  .gift.is-open .box { animation: none; }
+  .gift.is-open .box__lid { transform: translate(40px, -140px) rotate(28deg); opacity: 0; }
+  .baby { position: absolute; left: 50%; bottom: 40px; width: 110px; margin-left: -55px; transform: translateY(40px) scale(.6); opacity: 0; transition: transform .8s cubic-bezier(.3,1.5,.5,1) .3s, opacity .5s .3s; font-size: 4.6rem; line-height: 1; }
+  .gift.is-open .baby { transform: translateY(-70px) scale(1); opacity: 1; }
+
+  .hero { text-align: center; padding: 6rem 1.5rem 4rem; background: radial-gradient(40rem 28rem at 50% 20%, #FFFFFF, var(--peach) 80%); position: relative; overflow: hidden; }
+  .hero__photo { width: min(220px, 56vw); aspect-ratio: 1; border-radius: 50%; margin: 0 auto; box-shadow: 0 0 0 8px #fff, 0 0 0 10px var(--rose), 0 20px 40px -20px rgba(108,91,123,.5); }
+  .hero__photo .photo__mono { color: var(--rose); font-family: var(--script); }
+  .hero small { display: block; font-size: .8rem; letter-spacing: .22em; color: var(--rose); margin-top: 1.6rem; }
+  .hero h1 { font-family: var(--script); font-weight: 400; font-size: clamp(3.4rem, 12vw, 6rem); line-height: 1.1; color: var(--plum); margin: .2rem 0; }
+  .hero p { font-family: var(--serif); font-size: 1.3rem; }
+  .hero .countdown { margin: 1.8rem auto 0; }
+  .hero .countdown div { background: #fff; border-radius: 16px; padding: .6rem 0; box-shadow: 0 10px 20px -16px rgba(108,91,123,.5); }
+  .hero .countdown b { color: var(--plum); }
+  .float { position: absolute; font-size: 1.6rem; animation: bob 4s ease-in-out infinite; opacity: .8; }
+  @keyframes bob { 50% { transform: translateY(-12px) rotate(8deg); } }
+
+  .s { padding: clamp(4rem, 9vw, 6rem) 1.5rem; text-align: center; }
+  .s h2 { font-family: var(--script); font-weight: 400; font-size: clamp(2.6rem, 8vw, 3.6rem); color: var(--rose); line-height: 1.2; }
+  .s .lead { color: var(--mute); max-width: 32rem; margin: .4rem auto 0; }
+  .names { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 900px; margin: 2.2rem auto 0; }
+  .nm { border-radius: 24px; padding: 1.8rem 1.4rem; background: var(--c); }
+  .nm b { display: block; font-family: var(--script); font-weight: 400; font-size: 2.6rem; color: var(--plum); line-height: 1.1; }
+  .nm small { font-size: .74rem; letter-spacing: .18em; color: var(--mute); }
+  .nm p { margin-top: .5rem; font-size: .98rem; }
+  .facts { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 2.2rem; }
+  .facts div { background: #fff; border-radius: 18px; padding: 1rem 1.4rem; min-width: 9rem; box-shadow: 0 10px 20px -16px rgba(108,91,123,.5); }
+  .facts small { display: block; font-size: .7rem; letter-spacing: .16em; color: var(--mute); }
+  .facts b { font-family: var(--serif); font-weight: 600; font-size: 1.3rem; }
+  .day { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 900px; margin: 2.2rem auto 0; }
+  .day div { background: #fff; border-radius: 24px; padding: 1.6rem 1.3rem; box-shadow: 0 10px 20px -16px rgba(108,91,123,.5); }
+  .day time { font-family: var(--serif); font-weight: 600; font-size: 1.7rem; color: var(--rose); }
+  .day h3 { font-weight: 500; font-size: 1.1rem; margin: .2rem 0; }
+  .day p { color: var(--mute); font-size: .93rem; }
+  .btn--rose { background: var(--rose); color: #fff; border-color: var(--rose); }
+  .btn--line { color: var(--plum); border-color: rgba(108,91,123,.35); }
+  .wish { display: flex; justify-content: center; flex-wrap: wrap; gap: .6rem; max-width: 36rem; margin: 1.8rem auto 0; }
+  .wish span { background: var(--lav); border-radius: 999px; padding: .55rem 1rem; font-size: .92rem; }
+  .gift-card { max-width: 22rem; margin: 2rem auto 0; background: var(--mint); border-radius: 24px; padding: 1.8rem; }
+  .gift-card strong { display: block; font-family: var(--serif); font-weight: 600; font-size: 1.9rem; margin: .2rem 0 1rem; color: var(--plum); }
+  .gift-card small { font-size: .72rem; letter-spacing: .18em; color: var(--mute); }
+  .s--peach { background: var(--peach); }
+  .made a:not(.btn) { color: var(--rose); }
+  .made__prog { color: var(--plum); }
+  @media (max-width: 760px) { .names, .day { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="is-locked">
+<div class="bar"><a href="../../#samples">← TeamAfot Events</a><span class="bar__label">Sample naming ceremony website</span><a class="bar__cta" href="../../#contact">Plan my event</a></div>
+
+<div class="gift" aria-label="Gift box">
+  <div>
+    <p>A little gift has arrived for the</p>
+    <h1>Owusu family</h1>
+    <button class="box" aria-label="Unwrap the gift"><span class="baby" aria-hidden="true">👶🏾</span><span class="box__base"></span><span class="box__lid"><span class="box__bow"></span></span></button>
+    <p class="gift__hint">TAP THE GIFT TO UNWRAP IT</p>
+  </div>
+</div>
+
+<main>
+  <header class="hero">
+    <span class="float" style="left:8%;top:22%">⭐</span><span class="float" style="right:10%;top:30%;animation-delay:-1s">🌸</span><span class="float" style="left:14%;bottom:18%;animation-delay:-2s">🍼</span><span class="float" style="right:16%;bottom:22%;animation-delay:-3s">🎀</span>
+    <div class="photo hero__photo"><img src="../../assets/photos/baby-1.jpg" alt="Baby Nana Ama"><span class="photo__mono">Ama</span></div>
+    <small>WELCOME TO THE WORLD</small>
+    <h1>Nana Ama</h1>
+    <p>Join us as we name and outdoor our little blessing</p>
+    <div class="countdown">
+      <div><b data-cd="d">0</b><small>days</small></div><div><b data-cd="h">00</b><small>hours</small></div>
+      <div><b data-cd="m">00</b><small>mins</small></div><div><b data-cd="s">00</b><small>secs</small></div>
+    </div>
+  </header>
+
+  <section class="s">
+    <h2>Her name</h2>
+    <p class="lead">Every name carries a story. Here is hers.</p>
+    <div class="names">
+      <div class="nm" style="--c:var(--peach)"><small>HONOURING HER GRANDMOTHER</small><b>Nana</b><p>A name of respect, given in honour of her paternal grandmother.</p></div>
+      <div class="nm" style="--c:var(--mint)"><small>HER DAY NAME</small><b>Ama</b><p>Born on a Saturday, our little Saturday girl.</p></div>
+      <div class="nm" style="--c:var(--lav)"><small>FAMILY NAME</small><b>Serwaa</b><p>After her great-grandmother, a strong woman of faith.</p></div>
+    </div>
+    <div class="facts">
+      <div><small>BORN</small><b>Sat, 27 Feb 2027</b></div><div><small>TIME</small><b>5:42 a.m.</b></div><div><small>WEIGHT</small><b>3.2 kg</b></div><div><small>PROUD PARENTS</small><b>Kwame &amp; Abena</b></div>
+    </div>
+  </section>
+
+  <section class="s s--peach">
+    <h2>The day</h2>
+    <p class="lead">Saturday, 6 March 2027, eight days after she arrived.</p>
+    <div class="day">
+      <div><time>6:00 a.m.</time><h3>Naming ceremony</h3><p>At the family house, East Legon, led by the family elders.</p></div>
+      <div><time>10:00 a.m.</time><h3>Thanksgiving service</h3><p>Grace Chapel, East Legon. Dedication of the baby.</p></div>
+      <div><time>12:30 p.m.</time><h3>Reception</h3><p>Back at the family house for food, music and blessings.</p></div>
+    </div>
+    <p style="margin-top:1.8rem"><a class="btn btn--rose" href="../../programme/?e=naming">View the full programme</a> <button class="btn btn--line" data-toast="On a real site, this opens directions in Google Maps.">Get directions</button></p>
+  </section>
+
+  <section class="s">
+    <h2>Gifts for Nana Ama</h2>
+    <p class="lead">Your love is the best gift. If you'd like to bring something, here are a few ideas.</p>
+    <div class="wish"><span>🧸 Soft toys</span><span>👗 Clothes (6 to 12 months)</span><span>📚 Baby books</span><span>🛁 Bath set</span><span>🍼 Feeding bottles</span></div>
+    <div class="gift-card"><small>OR SEND A GIFT (SAMPLE)</small><strong>024 000 0000</strong><button class="btn btn--line" data-copy="0240000000">Copy number</button></div>
+  </section>
+
+  <section class="s s--peach">
+    <h2>Will you come?</h2>
+    <p class="lead">Kindly reply by 1 March 2027.</p>
+    <form class="rsvp" novalidate>
+      <label for="n">Your full name</label><input id="n" name="name" autocomplete="name" placeholder="Ama Owusu">
+      <fieldset><legend>Will you attend?</legend>
+        <label class="choice"><input type="radio" name="attend" value="yes" checked> Yes, I'll be there</label>
+        <label class="choice"><input type="radio" name="attend" value="no"> Sorry, I can't make it</label></fieldset>
+      <p class="rsvp__error" role="alert"></p>
+      <button class="btn btn--rose" type="submit">Send RSVP</button>
+      <p class="rsvp__done" role="status" style="color:var(--plum)"></p>
+    </form>
+  </section>
+
+  <div class="made">
+    <p>A sample website by <a href="../../">TeamAfot Events</a>. Baby Nana Ama, her family and every detail here are made up.</p>
+    <a class="btn btn--rose" href="https://wa.me/233552318104?text=Hello%20TeamAfot%20Events%2C%20I%27d%20like%20a%20naming%20ceremony%20website." target="_blank" rel="noopener">I want one like this</a>
+    <a class="made__prog" href="../../programme/?e=naming">See the programme</a>
+  </div>
+</main>
+
+<div class="toast" role="status" aria-live="polite"></div>
+<canvas class="fx" aria-hidden="true"></canvas>
+<script src="../../assets/base.js"></script>
+<script>
+  EV.countdown("2027-03-06T06:00:00");
+  EV.rsvp(document.querySelector(".rsvp"), "The Owusu family");
+  const gift = document.querySelector(".gift");
+  gift.querySelector(".box").addEventListener("click", () => {
+    if (gift.classList.contains("is-open")) return;
+    gift.classList.add("is-open");
+    EV.shower(["#F7C66B", "#E58F84", "#9ED9C4", "#C9B6E4"], { shape: "dot", count: 100 });
+    setTimeout(() => { gift.classList.add("is-done"); document.body.classList.remove("is-locked"); }, 1900);
+    setTimeout(() => gift.remove(), 2900);
+  });
+</script>
+</body>
+</html>
